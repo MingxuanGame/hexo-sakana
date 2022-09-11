@@ -1,6 +1,6 @@
 {
   "name": "hexo-sakana",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sakana🐟 in hexo",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/MingxuanGame/hexo-sakana/issues"
   },
-  "homepage": "https://github.com/MingxuanGame/hexo-sakana#readme",
+  "homepage": "https://blog.mxgame.top/2022/09/11/Add-Sakana-into-Hexo-Blog",
   "dependencies": {
     "hexo": "^6.3.0",
     "hexo-log": "^3.2.0",
