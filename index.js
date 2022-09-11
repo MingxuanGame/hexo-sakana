@@ -108,9 +108,7 @@ if (config.enable) {
             ...originCharacter.initialState,
             ...character,
           };
-          if (character.image !== "") {
-            originCharacter.image = character.image;
-          }
+          originCharacter.image = !character.image ? originCharacter.image : character.image
           SakanaWidget.registerCharacter(character.name, originCharacter);
           log(\`注册自定义角色：$\{character.name}\`)
         }
