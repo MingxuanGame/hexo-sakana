@@ -1,15 +1,15 @@
 /**
  * @description Hexo 莉可丽丝「Sakana! Widget」网页组件注入
  */
-/** global hexo */
 
 const _ = require('lodash');
+const hexo = require('hexo');
 const logger = require('hexo-log')({
   debug: false,
   silent: false,
 });
 
-defaultConfig = {
+const defaultConfig = {
   // 默认角色
   character: 'takina',
   // 是否启用
@@ -96,7 +96,7 @@ if (config.enable) {
         }
         for (character of config.customCharacters) {
           if (!["takina", "chisato"].includes(character.base)) {
-            log(\`无效基础角色 \$\{character.base\}，取消注册\`);
+            log(\`无效基础角色 $\{character.base}，取消注册\`);
             continue;
           }
           if (character.name === "") {
@@ -112,7 +112,7 @@ if (config.enable) {
             originCharacter.image = character.image;
           }
           SakanaWidget.registerCharacter(character.name, originCharacter);
-          log(\`注册自定义角色：\$\{character.name\}\`)
+          log(\`注册自定义角色：$\{character.name}\`)
         }
         new SakanaWidget({
           character: config.character,
@@ -125,10 +125,13 @@ if (config.enable) {
         }).mount("#sakana");
       }
   `;
-    configJson = JSON.stringify(config);
     const contentToInject = `
-      <div id="sakana" style="position:fixed;right:0;bottom:${config.bottom};"></div>
-      <script async onload='initSakanaWidget(${configJson})' src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.0/lib/sakana.min.js"></script>
+      <div id="sakana" style="position:fixed;right:0;bottom:${
+        config.bottom
+      };"></div>
+      <script async onload='initSakanaWidget(${JSON.stringify(
+        config
+      )})' src="https://cdn.jsdelivr.net/npm/sakana-widget@2.3.0/lib/sakana.min.js"></script>
       <script>${scriptToInject}</script>
     `;
     let newHtmlContent = htmlContent;

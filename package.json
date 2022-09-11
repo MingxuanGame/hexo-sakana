@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/MingxuanGame/hexo-sakana#readme",
   "dependencies": {
+    "hexo": "^6.3.0",
     "hexo-log": "^3.2.0",
     "lodash": "^4.17.21"
   },
