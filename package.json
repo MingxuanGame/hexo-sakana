@@ -1,0 +1,32 @@
+{
+  "name": "hexo-sakana",
+  "version": "1.0.0",
+  "description": "Sakana🐟 in hexo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MingxuanGame/hexo-sakana.git"
+  },
+  "keywords": [
+    "hexo",
+    "lycoris-recoil",
+    "sakana"
+  ],
+  "author": "MingxuanGame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MingxuanGame/hexo-sakana/issues"
+  },
+  "homepage": "https://github.com/MingxuanGame/hexo-sakana#readme",
+  "dependencies": {
+    "hexo-log": "^3.2.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0"
+  }
+}
