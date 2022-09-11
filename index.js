@@ -3,7 +3,6 @@
  */
 
 const _ = require('lodash');
-const hexo = require('hexo');
 const logger = require('hexo-log')({
   debug: false,
   silent: false,
@@ -67,7 +66,9 @@ const defaultConfig = {
 
 let config = _.defaultsDeep(
   {},
+  // eslint-disable-next-line no-undef
   hexo.config.sakana,
+  // eslint-disable-next-line no-undef
   hexo.theme.config.sakana,
   defaultConfig
 );
@@ -76,6 +77,7 @@ if (config.enable) {
   logger.info('启用 hexo-sakana 组件注入');
   logger.info(`默认角色：${config.character}`);
   logger.info(`配置文件：${JSON.stringify(config)}`);
+  // eslint-disable-next-line no-undef
   hexo.extend.filter.register('after_render:html', (htmlContent) => {
     const scriptToInject = `
       function log(msg) {
@@ -141,7 +143,7 @@ if (config.enable) {
       )}${contentToInject}${htmlContent.substring(
         lastIndex,
         htmlContent.length
-      )}`; // eslint-disable-line no-magic-numbers
+      )}`;
     }
     return newHtmlContent;
   });
