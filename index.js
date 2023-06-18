@@ -131,7 +131,7 @@ if (config.enable) {
       };"></div>
       <script async onload='initSakanaWidget(${JSON.stringify(
         config
-      )})' src="https://cdnjs.cloudflare.com/ajax/libs/sakana-widget/2.3.0/sakana.min.js"></script>
+      )})' src="https://npm.elemecdn.com/sakana-widget@2.3.0/lib/sakana.min.js"></script>
       <script>${scriptToInject}</script>
     `;
     let newHtmlContent = htmlContent;
